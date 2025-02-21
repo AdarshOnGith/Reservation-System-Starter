@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import flight.reservation.plane.Aircraft;
+
 public class Schedule {
 
     private List<ScheduledFlight> scheduledFlights;
@@ -18,7 +20,7 @@ public class Schedule {
     }
 
     public void scheduleFlight(Flight flight, Date date) {
-        ScheduledFlight scheduledFlight = new ScheduledFlight(flight.getNumber(), flight.getDeparture(), flight.getArrival(), flight.getAircraft(), date);
+        ScheduledFlight scheduledFlight = new ScheduledFlight(flight.getNumber(), flight.getDeparture(), flight.getArrival(), (Aircraft) flight.getAircraft(), date);
         scheduledFlights.add(scheduledFlight);
     }
 
