@@ -2,11 +2,17 @@ package flight.reservation.plane;
 
 public class PassengerPlane  implements Aircraft {
 
-    public String model;
-    public int passengerCapacity;
-    public int crewCapacity;
+    public final String model;
+    public final int passengerCapacity;
+    public final int crewCapacity;
 
-    public PassengerPlane(String model) {
+    public PassengerPlane(String model, int passengerCapacity, int crewCapacity) {
+        this.model = model;
+        this.passengerCapacity = passengerCapacity;
+        this.crewCapacity = crewCapacity;
+
+    }
+    public PassengerPlane(String model) {   
         this.model = model;
         switch (model) {
             case "A380":

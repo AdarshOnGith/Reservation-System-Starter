@@ -1,12 +1,20 @@
 package flight.reservation.plane;
 
 public class Helicopter implements Aircraft {
-    private final String model;
+    private String model;
     private final int passengerCapacity;
-    private final int crewCapacity = 2;
+    private final int crewCapacity;
 
+    public Helicopter(String model, int passengerCapacity, int crewCapacity) {
+        this.model = model;
+        this.passengerCapacity = passengerCapacity;
+        this.crewCapacity = crewCapacity;
+    }
+
+    
     public Helicopter(String model) {
         this.model = model;
+        this.crewCapacity = 2;
         if (model.equals("H1")) {
             passengerCapacity = 4;
         } else if (model.equals("H2")) {
